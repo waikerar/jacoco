@@ -15,6 +15,7 @@ package org.jacoco.core.internal.analysis;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.jacoco.core.analysis.IMethodCoverage;
 import org.jacoco.core.internal.analysis.filter.Filters;
 import org.jacoco.core.internal.analysis.filter.IFilter;
 import org.jacoco.core.internal.analysis.filter.IFilterContext;
@@ -122,11 +123,16 @@ public class ClassAnalyzer extends ClassProbesVisitor
 				signature);
 		mcc.calculate(mc);
 
-		if (mc.containsCode()) {
+		if (mc.containsCode() && !ignore(methodNode, mc, coverage)) {
 			// Only consider methods that actually contain code
 			coverage.addMethod(mc);
 		}
 
+	}
+
+	protected boolean ignore(MethodNode node, IMethodCoverage mc,
+			ClassCoverageImpl coverage) {
+		return false;
 	}
 
 	@Override
