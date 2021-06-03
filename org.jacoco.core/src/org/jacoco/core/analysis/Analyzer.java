@@ -28,6 +28,7 @@ import org.jacoco.core.internal.InputStreams;
 import org.jacoco.core.internal.Pack200Streams;
 import org.jacoco.core.internal.analysis.ClassAnalyzer;
 import org.jacoco.core.internal.analysis.ClassCoverageImpl;
+import org.jacoco.core.internal.analysis.ScalaClassAnalyzer;
 import org.jacoco.core.internal.analysis.StringPool;
 import org.jacoco.core.internal.data.CRC64;
 import org.jacoco.core.internal.flow.ClassProbesAdapter;
@@ -91,7 +92,7 @@ public class Analyzer {
 		}
 		final ClassCoverageImpl coverage = new ClassCoverageImpl(className,
 				classid, noMatch);
-		final ClassAnalyzer analyzer = new ClassAnalyzer(coverage, probes,
+		final ClassAnalyzer analyzer = new ScalaClassAnalyzer(coverage, probes,
 				stringPool) {
 			@Override
 			public void visitEnd() {

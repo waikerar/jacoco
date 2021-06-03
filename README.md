@@ -1,17 +1,14 @@
-JaCoCo Java Code Coverage Library
+JaCoCo Java Code Coverage Library - Customized using sbt-jacoco code
 =================================
 
-[![Build Status](https://dev.azure.com/jacoco-org/JaCoCo/_apis/build/status/JaCoCo?branchName=master)](https://dev.azure.com/jacoco-org/JaCoCo/_build/latest?definitionId=1&branchName=master)
-[![Build status](https://ci.appveyor.com/api/projects/status/g28egytv4tb898d7/branch/master?svg=true)](https://ci.appveyor.com/project/JaCoCo/jacoco/branch/master)
-[![Maven Central](https://img.shields.io/maven-central/v/org.jacoco/jacoco.svg)](http://search.maven.org/#search|ga|1|g%3Aorg.jacoco)
 
-JaCoCo is a free Java code coverage library distributed under the Eclipse Public
-License. Check the [project homepage](http://www.jacoco.org/jacoco)
-for downloads, documentation and feedback.
+Customized Jacoco Implementation using [sbt-jacoco](https://github.com/sbt/sbt-jacoco)
 
-Please use our [mailing list](https://groups.google.com/forum/?fromgroups=#!forum/jacoco)
-for questions regarding JaCoCo which are not already covered by the
-[extensive documentation](http://www.jacoco.org/jacoco/trunk/doc/).
+Below are the changes made to the original jacoco implementation
+1. New Class Analyzer - ScalaClassAnalyzer.
+2. Changes to addMethodCoverage method to ignore scala generated code.
+3. Changes to Analyzer to use the new ScalaClassAnalyzer.
 
-Note: We do not answer general questions in the project's issue tracker. Please use our [mailing list](https://groups.google.com/forum/?fromgroups=#!forum/jacoco) for this.
+The customization does not impact any of the other languages like java, scala, kotlin, scala
+
 -------------------------------------------------------------------------
