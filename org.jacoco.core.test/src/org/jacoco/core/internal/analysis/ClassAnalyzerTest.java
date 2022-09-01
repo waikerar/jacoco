@@ -33,7 +33,7 @@ public class ClassAnalyzerTest {
 	@Before
 	public void setup() {
 		coverage = new ClassCoverageImpl("Foo", 0x0000, false);
-		analyzer = new ClassAnalyzer(coverage, null, new StringPool());
+		analyzer = new ScalaClassAnalyzer(coverage, null, new StringPool());
 		analyzer.visit(Opcodes.V1_5, Opcodes.ACC_PUBLIC, "Foo", null,
 				"java/lang/Object", null);
 	}
